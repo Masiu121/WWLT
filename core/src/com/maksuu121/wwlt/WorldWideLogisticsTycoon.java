@@ -14,6 +14,16 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 	public static Texture winterTire;
 	public static Texture summertire;
 
+	public static Texture defaultTrailer;
+	public static Texture containerTrailer;
+	public static Texture tipperTrailer;
+	public static Texture coolerTrailer;
+	public static Texture liquidTrailer;
+	public static Texture lowTrailer;
+	public static Texture chemicalTrailer;
+	public static Texture radioactiveTrailer;
+	public static Texture heavyTrailer;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -23,6 +33,16 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 
 		winterTire = new Texture("badlogic.jpg");
 		summertire = new Texture("badlogic.jpg");
+
+		defaultTrailer = new Texture("badlogic.jpg");
+		containerTrailer = new Texture("badlogic.jpg");
+		tipperTrailer = new Texture("badlogic.jpg");
+		coolerTrailer = new Texture("badlogic.jpg");
+		liquidTrailer = new Texture("badlogic.jpg");
+		lowTrailer = new Texture("badlogic.jpg");
+		chemicalTrailer = new Texture("badlogic.jpg");
+		radioactiveTrailer = new Texture("badlogic.jpg");
+		heavyTrailer = new Texture("badlogic.jpg");
 	}
 
 	@Override
@@ -42,5 +62,15 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 
 		winterTire.dispose();
 		summertire.dispose();
+
+		defaultTrailer.dispose();
+		containerTrailer.dispose();
+		tipperTrailer.dispose();
+		coolerTrailer.dispose();
+		liquidTrailer.dispose();
+		lowTrailer.dispose();
+		chemicalTrailer.dispose();
+		radioactiveTrailer.dispose();
+		heavyTrailer.dispose();
 	}
 }
