@@ -11,12 +11,18 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 	public static Texture R730txt;
 	public static Texture R580txt;
 
+	public static Texture winterTire;
+	public static Texture summertire;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 		R730txt = new Texture("badlogic.jpg");
 		R580txt = new Texture("badlogic.jpg");
+
+		winterTire = new Texture("badlogic.jpg");
+		summertire = new Texture("badlogic.jpg");
 	}
 
 	@Override
@@ -33,5 +39,8 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 		img.dispose();
 		R730txt.dispose();
 		R580txt.dispose();
+
+		winterTire.dispose();
+		summertire.dispose();
 	}
 }
