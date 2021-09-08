@@ -9,9 +9,11 @@ public class Truck extends Vehicle {
     int fuelMax;
     int horsePower;
     Tire tire;
+    TruckType truckType;
 
     public Truck(TruckType truckType, Location location) {
         super(truckType.getName(), truckType.getTexture(), location);
+        this.truckType = truckType;
         fuelMax = truckType.getFuelMax();
         fuel = fuelMax;
         horsePower = truckType.getHorsePower();
