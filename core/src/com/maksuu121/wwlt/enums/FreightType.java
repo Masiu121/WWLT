@@ -3,7 +3,12 @@ package com.maksuu121.wwlt.enums;
 import java.util.Random;
 
 public enum FreightType {
-    NULL(0);
+    APPLES(15),
+    BEANS(12),
+    BRICKS(20),
+    CARROTS(17),
+    CEMENT(22),
+    CHEESE(17);
 
     int weight;
 
