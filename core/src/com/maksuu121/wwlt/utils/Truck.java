@@ -1,5 +1,6 @@
 package com.maksuu121.wwlt.utils;
 
+import com.maksuu121.wwlt.enums.Location;
 import com.maksuu121.wwlt.enums.TireType;
 import com.maksuu121.wwlt.enums.TruckType;
 
@@ -10,6 +11,7 @@ public class Truck extends Vehicle {
     int horsePower;
     Tire tire;
     TruckType truckType;
+    Freight freight;
 
     public Truck(TruckType truckType, Location location) {
         super(truckType.getName(), truckType.getTexture(), location);
@@ -18,6 +20,7 @@ public class Truck extends Vehicle {
         fuel = fuelMax;
         horsePower = truckType.getHorsePower();
         tire = new Tire(TireType.SUMMER);
+        freight = null;
     }
 
     public void changeTires(Tire tire) {
