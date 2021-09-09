@@ -24,6 +24,9 @@ public class Trip {
         FreightType freightType = FreightType.getRandom();
         Location startLocation = Location.getRandom();
         Location endLocation = Location.getRandom();
+        while(startLocation.equals(endLocation)) {
+            endLocation = Location.getRandom();
+        }
 
         double distance = Coordinates.getDistance(
                 startLocation.getCoordinates(),
@@ -45,7 +48,7 @@ public class Trip {
     }
 
     /*
-        Weight 15t-25t
+        Weight 10t-25t
         Distance 150km-2000km
         Earnings = (Weight * 10) + Distance * 8
      */
