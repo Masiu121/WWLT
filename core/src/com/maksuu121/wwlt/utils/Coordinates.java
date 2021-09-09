@@ -9,6 +9,11 @@ public class Coordinates {
     }
 
     public static double getDistance(Coordinates coordinates1, Coordinates coordinates2) {
-        return Math.sqrt(Math.pow(coordinates2.x - coordinates1.x, 2) + Math.pow(coordinates2.y - coordinates1.y, 2));
+        return Math.sqrt(Math.pow(
+                        coordinates2.x - coordinates1.x, 2
+                ) + Math.pow(
+                        coordinates2.y - coordinates1.y, 2
+                )
+        );
     }
 }
