@@ -2,6 +2,7 @@ package com.maksuu121.wwlt.utils;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.maksuu121.wwlt.enums.ActionType;
+import com.maksuu121.wwlt.enums.Location;
 
 public abstract class Vehicle {
     public String name;
