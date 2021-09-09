@@ -1,7 +1,6 @@
 package com.maksuu121.wwlt.enums;
 
 import com.maksuu121.wwlt.utils.Coordinates;
-
 import java.util.Random;
 
 public enum Location {
