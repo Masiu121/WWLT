@@ -1,5 +1,7 @@
 package com.maksuu121.wwlt.enums;
 
+import java.util.Random;
+
 public enum FreightType {
     NULL(0);
 
@@ -11,5 +13,10 @@ public enum FreightType {
 
     public int getWeight() {
         return weight;
+    }
+
+    public static FreightType getRandom() {
+        Random random = new Random();
+        return values()[random.nextInt(values().length)];
     }
 }
