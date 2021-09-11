@@ -51,5 +51,7 @@ public class Trip {
         Weight 10t-25t
         Distance 150km-2000km
         Earnings = (Weight * 10) + Distance * 8
+        
+        Time = distance/truckMaxSpeed + 500*(hp/((t*10)*2))
      */
 }
