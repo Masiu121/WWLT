@@ -2,10 +2,11 @@ package com.maksuu121.wwlt.enums;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.maksuu121.wwlt.WorldWideLogisticsTycoon;
+import com.maksuu121.wwlt.gui.WWLTTexture;
 
 public enum TireType {
-    WINTER("Winter tires", WorldWideLogisticsTycoon.winterTire),
-    SUMMER("Summer tires", WorldWideLogisticsTycoon.summertire);
+    WINTER("Winter tires", WWLTTexture.winterTire),
+    SUMMER("Summer tires", WWLTTexture.summerTire);
 
     String name;
     Texture texture;
