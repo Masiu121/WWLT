@@ -2,17 +2,18 @@ package com.maksuu121.wwlt.enums;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.maksuu121.wwlt.WorldWideLogisticsTycoon;
+import com.maksuu121.wwlt.gui.WWLTTexture;
 
 public enum TrailerType {
-    DEFAULT("Default trailer", WorldWideLogisticsTycoon.defaultTrailer),
-    CONTAINER("Container trailer", WorldWideLogisticsTycoon.containerTrailer),
-    TIPPER("Tipper trailer", WorldWideLogisticsTycoon.tipperTrailer),
-    COOLER("Cooler trailer", WorldWideLogisticsTycoon.coolerTrailer),
-    LIQUID("Liquid trailer", WorldWideLogisticsTycoon.liquidTrailer),
-    LOW("Low trailer", WorldWideLogisticsTycoon.lowTrailer),
-    CHEMICAL("Chemical trailer", WorldWideLogisticsTycoon.chemicalTrailer),
-    RADIOACTIVE("Radioactive trailer", WorldWideLogisticsTycoon.radioactiveTrailer),
-    HEAVY("Heavy trailer", WorldWideLogisticsTycoon.heavyTrailer);
+    DEFAULT("Default trailer", WWLTTexture.defaultTrailer),
+    CONTAINER("Container trailer", WWLTTexture.containerTrailer),
+    TIPPER("Tipper trailer", WWLTTexture.tipperTrailer),
+    COOLER("Cooler trailer", WWLTTexture.coolerTrailer),
+    LIQUID("Liquid trailer", WWLTTexture.liquidTrailer),
+    LOW("Low trailer", WWLTTexture.lowTrailer),
+    CHEMICAL("Chemical trailer", WWLTTexture.chemicalTrailer),
+    RADIOACTIVE("Radioactive trailer", WWLTTexture.radioactiveTrailer),
+    HEAVY("Heavy trailer", WWLTTexture.heavyTrailer);
 
     String name;
     Texture texture;
