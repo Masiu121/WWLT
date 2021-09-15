@@ -1,8 +1,9 @@
-package com.maksuu121.wwlt.utils;
+package com.maksuu121.wwlt.utils.vehicles;
 
 import com.maksuu121.wwlt.enums.Location;
 import com.maksuu121.wwlt.enums.TireType;
 import com.maksuu121.wwlt.enums.TruckType;
+import com.maksuu121.wwlt.utils.Trip;
 
 public class Truck extends Vehicle {
 
