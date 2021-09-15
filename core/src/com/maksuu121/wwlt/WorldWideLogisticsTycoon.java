@@ -10,6 +10,8 @@ public class WorldWideLogisticsTycoon extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 
+	public static int balance;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
