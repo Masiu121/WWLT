@@ -1,4 +1,4 @@
-package com.maksuu121.wwlt.utils;
+package com.maksuu121.wwlt.utils.vehicles;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.maksuu121.wwlt.enums.TireType;
