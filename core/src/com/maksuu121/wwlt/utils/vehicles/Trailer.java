@@ -1,7 +1,8 @@
-package com.maksuu121.wwlt.utils;
+package com.maksuu121.wwlt.utils.vehicles;
 
 import com.maksuu121.wwlt.enums.Location;
 import com.maksuu121.wwlt.enums.TrailerType;
+import com.maksuu121.wwlt.utils.Trip;
 
 public class Trailer extends Vehicle{
 
