@@ -37,4 +37,11 @@ public interface WWLTTexture {
     Texture chemicalTrailer = new Texture("badlogic.jpg");
     Texture radioactiveTrailer = new Texture("badlogic.jpg");
     Texture heavyTrailer = new Texture("badlogic.jpg");
+
+    //Flags
+    Texture poland = new Texture("badlogic.jpg");
+    Texture germany = new Texture("badlogic.jpg");
+    Texture italy = new Texture("badlogic.jpg");
+    Texture portugal = new Texture("badlogic.jpg");
+    Texture france = new Texture("badlogic.jpg");
 }
