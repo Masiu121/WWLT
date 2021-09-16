@@ -31,4 +31,12 @@ public class Truck extends Vehicle {
     public void refuel() {
         fuel = fuelMax;
     }
+
+    public int getFuel() {
+        return fuel;
+    }
+
+    public int getFuelMax() {
+        return fuelMax;
+    }
 }
