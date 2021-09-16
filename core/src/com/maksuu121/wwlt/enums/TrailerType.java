@@ -1,7 +1,6 @@
 package com.maksuu121.wwlt.enums;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.maksuu121.wwlt.WorldWideLogisticsTycoon;
 import com.maksuu121.wwlt.gui.WWLTTexture;
 
 public enum TrailerType {
