@@ -10,17 +10,4 @@ import com.maksuu121.wwlt.utils.vehicles.Truck;
 
 public class TruckDealerScreen implements WWLTTexture {
 
-    private void buyTruck(TruckType truckType, Headquarters headquarters, Garage garage) {
-        if(truckType.getPrice() <= WorldWideLogisticsTycoon.balance) {
-            Truck truck = new Truck(truckType, headquarters.getLocation());
-            garage.addTruck(truck);
-        }
-    }
-
-    private void buyTrailer(TrailerType trailerType, Headquarters headquarters, Garage garage) {
-        if(trailerType.getPrice() <= WorldWideLogisticsTycoon.balance) {
-            Trailer trailer = new Trailer(trailerType, headquarters.getLocation());
-            garage.addTrailer(trailer);
-        }
-    }
 }
