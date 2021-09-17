@@ -1,5 +1,6 @@
 package com.maksuu121.wwlt.utils.vehicles;
 
+import com.maksuu121.wwlt.enums.ActionType;
 import com.maksuu121.wwlt.enums.Location;
 import com.maksuu121.wwlt.enums.TireType;
 import com.maksuu121.wwlt.enums.TruckType;
@@ -30,6 +31,7 @@ public class Truck extends Vehicle {
 
     public void refuel() {
         fuel = fuelMax;
+        action = ActionType.NOTHING;
     }
 
     public int getFuel() {
