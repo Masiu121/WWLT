@@ -11,19 +11,20 @@ public abstract class Vehicle {
     Location location;
     int mileage = 0;
     int age = 0;
-    ActionType action = ActionType.NOTHING;
+    ActionType action;
 
     public Vehicle(String name, Texture texture, Location location) {
         this.name = name;
         this.texture = texture;
         this.location = location;
+        action = ActionType.NOTHING;
     }
 
-    void repair() {
+    public void repair() {
         durability = 100;
     }
 
-    void transfer(Location location) {
+    public void transfer(Location location) {
         this.location = location;
     }
 }
