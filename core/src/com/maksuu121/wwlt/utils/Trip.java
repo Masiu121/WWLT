@@ -1,5 +1,6 @@
 package com.maksuu121.wwlt.utils;
 
+import com.maksuu121.wwlt.enums.ActionType;
 import com.maksuu121.wwlt.enums.FreightType;
 import com.maksuu121.wwlt.enums.Location;
 
@@ -11,6 +12,7 @@ public class Trip {
     Location endLocation;
     double distance;
     double earnings;
+    public ActionType actionType;
 
     public Trip(FreightType freight, Location startLocation, Location endLocation, double distance, double earnings) {
         this.freight = freight;
@@ -18,6 +20,7 @@ public class Trip {
         this.endLocation = endLocation;
         this.distance = distance;
         this.earnings = earnings;
+        actionType = ActionType.NOTHING;
     }
 
     public static Trip generate() {
