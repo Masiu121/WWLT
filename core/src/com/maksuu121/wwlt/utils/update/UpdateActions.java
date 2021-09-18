@@ -23,6 +23,7 @@ public class UpdateActions {
     }
 
     private void refuelUpdate() {
+        timestamp = new Timestamp(System.currentTimeMillis());
         for(int i = 0; i < refuelTime.size(); i++) {
             if(refuelTime.get(i).timestamp <= timestamp.getTime()) {
                 refuelTime.get(i).truck.refuel();
@@ -33,6 +34,7 @@ public class UpdateActions {
     }
 
     private void repairUpdate() {
+        timestamp = new Timestamp(System.currentTimeMillis());
         for(int i = 0; i < repairTime.size(); i++) {
             if(repairTime.get(i).timestamp <= timestamp.getTime()) {
                 repairTime.get(i).vehicle.repair();
@@ -43,6 +45,7 @@ public class UpdateActions {
     }
 
     private void driveUpdate() {
+        timestamp = new Timestamp(System.currentTimeMillis());
         for(int i = 0; i < driveTime.size(); i++) {
             if(driveTime.get(i).timestamp <= timestamp.getTime()) {
                 driveTime.get(i).trip.actionType = ActionType.NOTHING;
@@ -53,7 +56,6 @@ public class UpdateActions {
     }
 
     public void update() {
-        timestamp = new Timestamp(System.currentTimeMillis());
         if(!refuelTime.isEmpty()) {
             refuelUpdate();
         }
