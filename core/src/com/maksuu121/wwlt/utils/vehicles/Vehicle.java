@@ -27,4 +27,12 @@ public abstract class Vehicle {
     public void transfer(Location location) {
         this.location = location;
     }
+
+    public ActionType getAction() {
+        return action;
+    }
+
+    public void setAction(ActionType action) {
+        this.action = action;
+    }
 }
