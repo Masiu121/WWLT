@@ -11,6 +11,7 @@ public class Truck extends Vehicle {
     int fuel;
     int fuelMax;
     int horsePower;
+    float economy;
     Tire tire;
     TruckType truckType;
     Trip trip;
@@ -19,6 +20,7 @@ public class Truck extends Vehicle {
         super(truckType.getName(), truckType.getTexture(), location);
         this.truckType = truckType;
         fuelMax = truckType.getFuelMax();
+        economy = truckType.getEconomy();
         fuel = fuelMax;
         horsePower = truckType.getHorsePower();
         tire = new Tire(TireType.SUMMER);
