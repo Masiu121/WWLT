@@ -7,7 +7,7 @@ public class RepairUpdate {
     public long timestamp;
     public Vehicle vehicle;
 
-    public RepairUpdate(long timestamp, Truck vehicle) {
+    public RepairUpdate(long timestamp, Vehicle vehicle) {
         this.timestamp = timestamp;
         this.vehicle = vehicle;
     }
