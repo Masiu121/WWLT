@@ -15,7 +15,8 @@ public class UpdateAction {
     List<RepairUpdate> repairTime;
     List<DriveUpdate> driveTime;
     List<LoadUpdate> loadTime;
-    List<LoadUpdate> unloadTime;
+    List<UnloadUpdate> unloadTime;
+    List<FinishUpdate> finishTime;
     Timestamp timestamp;
 
     public UpdateAction() {
@@ -24,6 +25,7 @@ public class UpdateAction {
         driveTime = new ArrayList<>();
         loadTime = new ArrayList<>();
         unloadTime = new ArrayList<>();
+        finishTime = new ArrayList<>();
         timestamp = new Timestamp(System.currentTimeMillis());
     }
 
@@ -85,6 +87,17 @@ public class UpdateAction {
         }
     }
 
+    private void finishUpdate() throws Throwable {
+        timestamp = new Timestamp(System.currentTimeMillis());
+        for(int i = 0; i < finishTime.size(); i++) {
+            if(finishTime.get(i).timestamp <= timestamp.getTime()) {
+                finishTime.get(i).trip.finishTrip();
+                finishTime.remove(i);
+                update();
+            }
+        }
+    }
+
     public void update() {
         if(!refuelTime.isEmpty()) {
             refuelUpdate();
@@ -120,6 +133,10 @@ public class UpdateAction {
     }
 
     public void addUnloadTime(long timeMilis, Trip trip) {
-        unloadTime.add(new LoadUpdate(timestamp.getTime() + timeMilis, trip));
+        unloadTime.add(new UnloadUpdate(timestamp.getTime() + timeMilis, trip));
+    }
+
+    public void addFinishTime(long timeMilis, Trip trip) {
+        finishTime.add(new FinishUpdate(timestamp.getTime() + timeMilis, trip));
     }
 }
