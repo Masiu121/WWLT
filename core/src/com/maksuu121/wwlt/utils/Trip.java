@@ -3,15 +3,24 @@ package com.maksuu121.wwlt.utils;
 import com.maksuu121.wwlt.enums.ActionType;
 import com.maksuu121.wwlt.enums.FreightType;
 import com.maksuu121.wwlt.enums.Location;
+import com.maksuu121.wwlt.enums.TripStatus;
+import com.maksuu121.wwlt.utils.update.UpdateAction;
+import com.maksuu121.wwlt.utils.vehicles.Trailer;
+import com.maksuu121.wwlt.utils.vehicles.Truck;
 
 import java.text.DecimalFormat;
 
-public class Trip {
+public class Trip implements ErrorCode {
     FreightType freight;
     Location startLocation;
     Location endLocation;
+    Employee driverEmployee;
+    Employee warehouseEmployee;
+    Trailer trailer;
+    Truck truck;
     double distance;
     double earnings;
+    public TripStatus tripStatus;
     public ActionType actionType;
 
     public Trip(FreightType freight, Location startLocation, Location endLocation, double distance, double earnings) {
@@ -21,6 +30,7 @@ public class Trip {
         this.distance = distance;
         this.earnings = earnings;
         actionType = ActionType.NOTHING;
+        tripStatus = TripStatus.ACCEPTED;
     }
 
     public static Trip generate() {
@@ -48,6 +58,70 @@ public class Trip {
                 distance,
                 earnings
         );
+    }
+
+    void selectDriver(Employee driverEmployee) {
+        this.driverEmployee = driverEmployee;
+    }
+
+    void selectWarehouseEmployee(Employee warehouseEmployee) {
+        this.warehouseEmployee = warehouseEmployee;
+    }
+
+    void selectTruck(Truck truck) {
+        this.truck = truck;
+    }
+
+    void selectTrailer(Trailer trailer) {
+        this.trailer = trailer;
+    }
+
+    void nextAction(UpdateAction updateAction) {
+        switch(tripStatus) {
+            case ACCEPTED:
+                load(updateAction);
+                break;
+            case LOADED:
+                drive(updateAction);
+                break;
+            case ARRIVED:
+                unload(updateAction);
+                break;
+            case UNLOADED:
+                break;
+        }
+    }
+
+    int load(UpdateAction updateAction) {
+        if(trailer != null) {
+            if(warehouseEmployee != null) {
+                actionType = ActionType.LOADING;
+                updateAction.addLoadTime(30000, this);
+            }
+            else
+                return NO_WAREHOUSE_EMPLOYEE_SELECTED;
+        }
+        return NO_TRAILER_SELECTED;
+    }
+
+    int drive(UpdateAction updateAction) {
+        if(truck != null) {
+            if(driverEmployee != null) {
+                actionType = ActionType.DRIVING;
+                updateAction.addDriveTime(1, this);
+            }
+            else
+                return NO_DRIVER_EMPLOYEE_SELECTED;
+        }
+        return NO_TRUCK_SELECTED;
+    }
+
+    int unload(UpdateAction updateAction) {
+        if(trailer.getAction() == ActionType.NOTHING) {
+            actionType = ActionType.UNLOADING;
+            updateAction.addUnloadTime(1, this);
+        }
+        return TRAILER_NOT_AVAILABLE;
     }
 
     /*
