@@ -13,4 +13,5 @@ public interface ErrorCode {
     int NO_WAREHOUSE_EMPLOYEE_SELECTED = -8;
     int NO_DRIVER_EMPLOYEE_SELECTED = -9;
     int TRAILER_NOT_AVAILABLE = -10;
+    int NO_MANAGER_EMPLOYEE_SELECTED = -11;
 }
