@@ -1,5 +1,6 @@
 package com.maksuu121.wwlt.utils;
 
+import com.maksuu121.wwlt.WorldWideLogisticsTycoon;
 import com.maksuu121.wwlt.enums.ActionType;
 import com.maksuu121.wwlt.enums.FreightType;
 import com.maksuu121.wwlt.enums.Location;
@@ -16,6 +17,7 @@ public class Trip implements ErrorCode {
     Location endLocation;
     Employee driverEmployee;
     Employee warehouseEmployee;
+    Employee managerEmployee;
     Trailer trailer;
     Truck truck;
     double distance;
@@ -64,6 +66,10 @@ public class Trip implements ErrorCode {
         this.driverEmployee = driverEmployee;
     }
 
+    void selectManager(Employee managerEmployee) {
+        this.driverEmployee = managerEmployee;
+    }
+
     void selectWarehouseEmployee(Employee warehouseEmployee) {
         this.warehouseEmployee = warehouseEmployee;
     }
@@ -88,6 +94,7 @@ public class Trip implements ErrorCode {
                 unload(updateAction);
                 break;
             case UNLOADED:
+                finish(updateAction);
                 break;
         }
     }
@@ -122,6 +129,19 @@ public class Trip implements ErrorCode {
             updateAction.addUnloadTime(1, this);
         }
         return TRAILER_NOT_AVAILABLE;
+    }
+
+    int finish(UpdateAction updateAction) {
+        if(managerEmployee != null) {
+            actionType = ActionType.FINISHING;
+            updateAction.addFinishTime(1, this);
+        }
+        return NO_MANAGER_EMPLOYEE_SELECTED;
+    }
+
+    public void finishTrip() throws Throwable {
+        WorldWideLogisticsTycoon.balance += earnings;
+        this.finalize();
     }
 
     /*
