@@ -1,8 +1,7 @@
 package com.maksuu121.wwlt.utils;
 
 public interface ErrorCode {
-    int SUCCES = 1;
-
+    int SUCCESS = 1;
     int NOT_ENOUGH_MONEY = -1;
     int TRUCK_NOT_AVAILABLE = -2;
     int EMPLOYEE_NOT_AVAILABLE = -3;
@@ -14,4 +13,5 @@ public interface ErrorCode {
     int NO_DRIVER_EMPLOYEE_SELECTED = -9;
     int TRAILER_NOT_AVAILABLE = -10;
     int NO_MANAGER_EMPLOYEE_SELECTED = -11;
+    int PLAYER_NOT_FOUND = -12;
 }
